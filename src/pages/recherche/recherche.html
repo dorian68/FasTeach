@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-item>
+        <a><ion-title class="text" (click)="logout()">
+            Salut {{_data.utilisateur.nom}} !
+          </ion-title>           
+            <ion-icon class="icon-top" name="archive" (click)="feedBack()"></ion-icon>           
+          </a>
+    </ion-item>         
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="true">
+  <div #map id="map"></div> 
+  
+  
+  <ion-list>
+  <ion-list-header class="Prof">
+    <ion-segment>
+    <ion-icon item-start class="icon" name="search" ></ion-icon>
+
+      <ion-segment-button (click)="search()" >
+        <h2>Professeurs proches</h2>
+      </ion-segment-button>
+    
+
+    </ion-segment>
+    </ion-list-header>
+
+    <!--item professeurs prches-->
+    <ion-item  class="vide" *ngIf="tmp.length < 1">
+      <h2>Aucun professeurs</h2>
+    </ion-item>
+  <ion-item-sliding *ngFor="let item of tmp" (click)="personalPage(item)">
+    <ion-item>
+      <ion-icon item-start name="leaf"></ion-icon>
+      <h2>{{_data.d[item].nom}} {{_data.d[item].prenom}}, {{_data.d[item].matiere}}</h2>
+      <h3>{{_data.d[item].adresse}}</h3>
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="primary" (click)="openRoom(item)">
+        <ion-icon name="text"></ion-icon>
+        Salle
+      </button>
+      <button ion-button color="secondary">
+        <ion-icon name="star"></ion-icon>
+        Noter
+      </button>
+    </ion-item-options>
+    <ion-item-options side="right">
+      <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  <!--item professeurs prches-->
+
+   <ion-list-header class="Prof">
+    <ion-segment>
+      <ion-segment-button>
+        <h2>Rendez-vous</h2>
+      </ion-segment-button>
+    </ion-segment>
+    </ion-list-header>
+    <ion-item class="vide" *ngIf="listRdv.length < 1">
+        <h2>Aucun rendez-vous</h2>
+      </ion-item>
+  <ion-item-sliding *ngFor="let item of listRdv">
+    
+    <ion-item>
+      <ion-icon item-start name="leaf"></ion-icon>
+      <h2>{{item.professeur}}</h2>
+      <h3>{{item.creneau}}</h3>
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="primary" (click)="openRoom()">
+        <ion-icon name="key"></ion-icon>
+        rejoindre
+      </button>
+      <button ion-button color="secondary">
+        <ion-icon name="star"></ion-icon>
+        noter
+      </button>
+    </ion-item-options>
+    <ion-item-options side="right">
+      <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  
+</ion-list>
+</ion-content>

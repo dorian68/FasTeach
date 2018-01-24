@@ -1,0 +1,121 @@
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+     John Doe 
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="actu">
+        Actualité
+      </ion-segment-button>
+      <ion-segment-button value="partage">
+        partager 
+      </ion-segment-button>
+      <ion-segment-button value="contact">
+        Contacter
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll="true" >
+     <div id="publication" [ngSwitch]="pet">
+        <!--liste swith case -->
+    <ion-list *ngSwitchCase="'actu'">        
+            <ion-item *ngFor="let item of tf">
+                  <ion-card>
+          <ion-list>
+            <ion-item>
+              <h2>{{item.from}}</h2>
+              <p>{{item.description}}</p>
+            </ion-item>
+            <img src="https://i.ytimg.com/vi/Kt_JePg86b8/maxresdefault.jpg">
+            <ion-card-content>
+              <p>{{item.description}}</p>
+            </ion-card-content>
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div>{{item.title}} j'aime</div>
+                </button>
+                  <div class="testons"></div>     
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="text"></ion-icon>
+                  <div>commenter</div>
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  {{item.title}}
+                </ion-note>
+              </ion-col>
+              </ion-row>
+            </ion-list>
+          </ion-card>
+            </ion-item>
+  </ion-list>
+
+ 
+  <ion-list *ngSwitchCase="'partage'">
+    <form>
+    <ion-item>
+      <ion-card>
+        <ion-item>
+          <span>
+            <h1>Entrez une publication </h1>
+          </span>
+        <ion-item id="valeur" type="text">
+          <ion-textarea [(ngModel)]="publi.description" name="description"></ion-textarea>
+        </ion-item>
+    </ion-item>
+    
+        <ion-item>
+          <button ion-button item-left clear item-end>
+            <ion-icon name="photos"></ion-icon>
+                Photo
+              </button>
+            <button ion-button icon-left clear item-end (click)="addItem(publi)" >
+          <ion-icon name="navigate"></ion-icon>
+            Publier
+          </button>
+        </ion-item>
+      </ion-card>
+
+      </ion-item>
+       </form>
+    </ion-list>
+   
+  <ion-list *ngSwitchCase="'contact'">
+  <ion-list>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="img/avatar-cher.png">
+    </ion-avatar>
+    <h2>Cher</h2>
+    <p>Ugh. As if.</p>
+  </ion-item>
+</ion-list>
+<ion-list>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="img/avatar-cher.png">
+    </ion-avatar>
+    <h2>Cher</h2>
+    <p>Ugh. As if.</p>
+  </ion-item>
+</ion-list>
+</ion-list>
+
+
+
+  
+  <!--fion ion liste-->
+     </div> 
+</ion-content>

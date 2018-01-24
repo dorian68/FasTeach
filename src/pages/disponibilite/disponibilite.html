@@ -1,0 +1,72 @@
+<!--
+  Generated template for the DisponibilitePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>disponibilite</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding scrollbar-y="true" scrollbar-x="true">
+  <!-->gauche<-->
+  <ion-item>   
+    <!--<ion-item>
+      <ion-icon name="arrow-back" class="left" (click)="change()"></ion-icon>
+      <ion-icon name="arrow-forward" class="right"></ion-icon>
+    </ion-item>-->
+    <ul class="left">
+      <li><a (click)="touche()">{{edt[0].jour}}</a></li>
+    </ul>
+<!-->milieu<-->
+  <ul class="middle">
+      <li><a (click)="touche()">{{edt[1].jour}}</a></li>
+  </ul>
+
+<!-->droite<-->
+  <ul class="right">
+      <li><a (click)="touche()">{{edt[2].jour}}</a></li>
+  </ul>
+
+  <ul class="right">
+    <li><a (click)="touche()">{{edt[3].jour}}</a></li>
+</ul>
+
+<ul class="right">
+  <li><a (click)="touche()">{{edt[4].jour}}</a></li>
+</ul>
+</ion-item>
+ 
+<ion-item *ngFor="let item of edt[1].horaires">   
+  <ul class="left">
+    <li><a (click)="print1(item.heure)">{{item.heure}}</a></li>
+  </ul>  
+  <ul class="middle">
+      <li><a (click)="print2(item.heure)">{{item.heure}}</a></li>
+  </ul>
+  <ul class="right">
+    <li><a (click)="print3(item.heure)">{{item.heure}}</a></li>
+  </ul>
+  <ul class="right">
+    <li><a (click)="print4(item.heure)">{{item.heure}}</a></li>
+  </ul>
+  <ul class="right">
+    <li><a (click)="print5(item.heure)">{{item.heure}}</a></li>
+  </ul>
+</ion-item>
+ 
+  <!--<ion-item *ngFor="let item of edt.horaires">
+      <ul class="middle">
+          <li><a>{{item.heure}}</a></li>
+      </ul>
+      <ul class="right">
+            <li><a>item.jour</a></li>
+      </ul>
+  </ion-item> -->
+ 
+</ion-content>

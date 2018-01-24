@@ -1,0 +1,53 @@
+<!--
+  Generated template for the VosProfsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>vosProfs</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list-header class="Prof">
+        <ion-segment>    
+          <ion-segment-button>
+            <h2>Professeurs proches</h2>
+          </ion-segment-button>
+        
+    
+        </ion-segment>
+        </ion-list-header>
+    
+        <!--item professeurs prches-->
+      <ion-item-sliding *ngFor="let item of tmp" (click)="personalPage(item)">
+        <ion-item>
+          <ion-icon item-start name="leaf"></ion-icon>
+          <h2>{{_data.d[item].nom}} {{_data.d[item].prenom}}, {{_data.d[item].matiere}}</h2>
+          <h3>{{_data.d[item].adresse}}</h3>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary" (click)="openFeed(item)">
+            <ion-icon name="text"></ion-icon>
+            Salle
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="star"></ion-icon>
+            Noter
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            Email
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <!--item professeurs prches-->
+    
+</ion-content>

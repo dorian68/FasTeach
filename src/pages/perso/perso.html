@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+    <ion-title>
+      Fiche Personelle
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+        <ion-card class="img">
+          <img src="https://usatcollege.files.wordpress.com/2014/07/178493509.jpg?w=630&h=420"/>
+          <div class="card-title">{{_data.d[_data.selectedTeacher].nom}} {{_data.d[_data.selectedTeacher].prenom}}</div>
+          <div class="card-subtitle"> {{_data.d[_data.selectedTeacher].matiere}} </div>
+        </ion-card>
+        <ion-list>
+            <ion-card>
+            <ion-card-header>
+             Description
+             </ion-card-header>
+             <ion-card-content>
+                {{_data.d[_data.selectedTeacher].description}}             
+            </ion-card-content>
+             </ion-card>
+             <ion-card>
+                <ion-card-header>
+                    Avant de réserver
+                     </ion-card-header>
+                     <ion-card-content>
+                         <p>
+                            <ion-icon item-start name="leaf"></ion-icon>  
+                            {{_data.d[_data.selectedTeacher].prix}} euro / heure 
+                         </p>
+                         <p>
+                            <ion-icon item-start name="leaf"></ion-icon>
+                            {{_data.d[_data.selectedTeacher].adresse}} ( 500m )
+                         </p>
+                         <p>
+                            <ion-icon item-start name="leaf"></ion-icon>
+                            dispo lundi 8 jan, 8h00
+                        </p>
+                     </ion-card-content>
+                </ion-card>
+        </ion-list>
+        <button ion-button col-12 round (click)="openReservation()">réserver</button>
+    </ion-content>

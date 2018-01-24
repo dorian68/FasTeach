@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <ion-title>
+        Feed Back
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content>
+      <ion-card>
+        <ion-card-header>
+         {{_data.eleveNote.prenom}}  {{_data.eleveNote.nom}}
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #lineCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    <ion-list>
+        <ion-card> 
+          <ion-card-header>
+              Line Chart
+          </ion-card-header>
+          <ion-card-content >
+              <ion-item>
+                  <ion-label floating>note</ion-label>
+                  <ion-input name="telephone" type="text" [(ngModel)]="item.note" ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Feed Back</ion-label>
+                    <ion-input name="telephone" type="text" [(ngModel)]="item.description"></ion-input>
+                  </ion-item>
+                  <button ion-button icon-left clear item-end (click)="noter(item)" >
+                      <ion-icon name="navigate"></ion-icon>
+                        Publier
+                      </button>
+          </ion-card-content>
+        </ion-card>
+    </ion-list>
+      
+
+      <!--<ion-card>
+          <ion-card-header>
+            Bar Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #barCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+     
+        <ion-card>
+          <ion-card-header>
+            Doughnut Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #doughnutCanvas></canvas>
+          </ion-card-content>
+        </ion-card>-->
+   
+  </ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      FasTeach
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+<div>
+  <ion-img width="250" height="160" src="http://media.gettyimages.com/photos/teacher-with-pointer-at-blackboard-isolated-3d-image-picture-id177010483?s=170667a&w=1007"></ion-img>
+</div>
+ 
+<h1>
+  Bienvenue sur FasTeach! 
+</h1>
+
+  <ion-list class="corps">
+<li>
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input name="email" type="email" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+</li>
+<li>
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input name="password" type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+</li>
+</ion-list>
+
+
+
+<ion-col class="but1">
+  <button ion-button item-left item-end round (click)="openApp(user)" >Entrer</button>
+</ion-col>
+<ion-col>
+  <button ion-button item-right item-end round (click)="inscription()">s'inscrire</button>
+</ion-col>
+
+
+</ion-content>
+<ion-footer class="footer">
+  <p>FasTeach 2017 All rigth reserved</p>
+</ion-footer>
+
